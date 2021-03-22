@@ -1,0 +1,482 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Esmag</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/6f27d00af3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'map_home_page/css/leaflet.css'%}">
+    <link rel="stylesheet" href="{% static 'map_home_page/css/qgis2web.css'%}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css'%}">
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Work', 11],
+                ['Eat', 2],
+                ['Commute', 2],
+                ['Watch TV', 2],
+                ['Sleep', 7]
+            ]);
+
+            var options = {
+                title: 'My Daily Activities'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+
+<body style='padding:0px;align-items:baseline; display:contents'>
+    <div>
+        <nav class='nav'>
+            <div>
+                <ul class='nav__menu'>
+                    <li class='nav__menu-item'><i class="fas fa-chevron-down "><a href="# "></i>Conoce el río</a>
+                        <ul class='nav__dropdown'>
+                            <li class='nav__dropdown-item'><a class='lightblue' href="# ">Agua</a></li>
+                            <li class='nav__dropdown-item'><a class='green' href="# ">Bosque</a></li>
+                            <li class='nav__dropdown-item'><a class='yellow' href="# ">Usuarios</a></li>
+                            <li class='nav__dropdown-item'><a class='darkblue' href="# ">Gobernanza</a></li>
+                        </ul>
+                    </li class='nav__menu-item'>
+                    <li class='nav__menu-item'><i class="fas fa-chevron-down "><a href="# "></i><a href="# ">Visita el río</a>
+                        <ul class='nav__dropdown'>
+                            <li class='nav__dropdown-item'><a class='lightblue' href="# ">Sitios por conocer</a></li>
+                            <li class='nav__dropdown-item'><a class='green' href="# ">Avisos</a></li>
+                            <li class='nav__dropdown-item'><a class='yellow' href="# ">Materiales</a></li>
+                        </ul>
+                    </li>
+                    <li class='nav__menu-item'><a href="/biblioteca/ ">Biblioteca</a></li>
+                    <li class='nav__menu-item'><a href="# ">Estrategia</a></li>
+                    <li class='nav__menu-item'><a href="# ">Contacto</a></li>
+                </ul>
+                <div class='nav__hamburger'>
+                    <div class='nav__hamburger-line1'></div>
+                    <div class='nav__hamburger-line2'></div>
+                    <div class='nav__hamburger-line3'></div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div>
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item lightblue">
+                <a class="nav-link " style="font-size: 2.0rem; color:white" href="bosque-principal.html">Bosque principal</a>
+            </li>
+            <li class="nav-item green">
+                <a class="nav-link" style="font-size: 2.0rem; color:white" href="bosque-medio.html">Bosque alto</a>
+            </li>
+            <li class="nav-item yellow">
+                <a class="nav-link" style="font-size: 2.0rem; color:white" href="bosque-medio.html">Bosque medio</a>
+            </li>
+            <li class="nav-item darkblue">
+                <a class="nav-link" style="font-size: 2.0rem; color:white" href="bosque-bajo.html">Bosque bajo</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-mdb-ride="carousel">
+        <section class="header">
+            <div class="header__slider">
+                <div class="header__slide active" style="background-image: url({% static './fotos/cascada.jpg'%})">
+                    <div class="header__caption-container">
+                        <div class="caption">
+                            <P class="header__title">El Magdalena</P>
+                            <p class="header__line"></p>
+                            <p class="header__sub">Patrimonio natural de la Ciuidad de México</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__slider">
+                <div class="header__slide active" style="background-image: url({% static './fotos/cascada.jpg'%})">
+                    <div class="header__caption-container">
+                        <div class="caption">
+                            <P class="header__title">El Magdalena</P>
+                            <p class="header__line"></p>
+                            <p class="header__sub">Patrimonio natural de la Ciuidad de México</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__slider">
+                <div class="header__slide" style="background-image: url({% static './fotos/ciudad.JPG'%})">
+                    <div class="header__caption-container">
+                        <div class="caption">
+                            <P class="header__title">El Magdalena</P>
+                            <p class="header__line"></p>
+                            <p class="header__sub">Patrimonio natural de la Ciuidad de México</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__slider">
+                <div class="header__slide" style="background-image: url({% static './fotos/santeria.jpg'%})">
+                    <div class="header__caption-container">
+                        <div class="caption">
+                            <P class="header__title">El Magdalena</P>
+                            <p class="header__line"></p>
+                            <p class="header__sub">Patrimonio natural de la Ciuidad de México</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__slider-indicator"></div>
+        </section>
+    </div>
+
+    <div class='container-fluid' style="padding:0px;margin:0 ">
+        <p style='width: 100%;padding-left:2%; text-transform: uppercase;color: white;background-color: rgb(31, 42, 92);font-family: oswald;font-size: 4rem;'>Bosque alto</p>
+    </div>
+
+    <div class="container">
+        <p class="text-center">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti
+            sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.
+            Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur.
+            Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem
+            certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas
+            ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus
+            sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis
+            iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac,
+            sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio
+            operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni
+            dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi
+            concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea
+            iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur.
+            Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem
+            certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas
+            ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus
+            sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis
+            iudicium purus sit amet fermentum.</p>
+    </div>
+
+
+    <div class='container-fluid' style="padding:0px;margin:0 ">
+        <p style='width: 50%;padding-left:2%; text-transform: uppercase;color: white;background-color: rgb(31, 42, 92);font-family: oswald;font-size: 4rem;'>Bosque</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <img class="d-block w-100" height="600" src="{% static './graficos/LOGO.png'%}" alt="Second slide">
+            </div>
+            <div class="col-sm-6 text-center">
+                <p>
+                    Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi
+                    concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.
+                    Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse
+                    iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium
+                    totius Galliae in diem certam indicere. Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At
+                    nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet
+                    fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis
+                    iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc
+                    posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis
+                    rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse
+                    scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi
+                    concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.
+                    Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class='container-fluid' style="padding:0px;margin:0 ">
+        <p style='width: 50%;padding-left:2%; text-transform: uppercase;color: white;background-color: rgb(31, 42, 92);font-family: oswald;font-size: 4rem;'>Bosque</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                <p>
+                    Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi
+                    concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.
+                    Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse
+                    iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium
+                    totius Galliae in diem certam indicere. Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At
+                    nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet
+                    fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis
+                    iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc
+                    posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis
+                    rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse
+                    scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi
+                    concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.
+                    Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere.
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <img class="d-block w-100" height="600" src="{% static './graficos/LOGO.png'%}" alt="Second slide">
+            </div>
+        </div>
+    </div>
+    <div class='container-fluid' style="padding:0px;margin:0 ">
+        <p style='width: 50%;padding-left:2%; text-transform: uppercase;color: white;background-color: rgb(31, 42, 92);font-family: oswald;font-size: 4rem;'>Bosque</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <img class="d-block w-100" height="600" src="{% static './graficos/LOGO.png'%}" alt="Second slide">
+            </div>
+            <div class="col-sm-6 text-center">
+                <p>
+                    Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi
+                    concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.
+                    Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse
+                    iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium
+                    totius Galliae in diem certam indicere. Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At
+                    nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet
+                    fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis
+                    iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc
+                    posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis
+                    rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse
+                    scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi
+                    concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.
+                    Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <img class="d-block w-100" height="600" src="{% static './graficos/LOGO.png'%}" alt="Second slide">
+    </div>
+
+    <div class="container">
+        <p class="text-center">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti
+            sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.
+            Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur.
+            Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem
+            certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas
+            ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus
+            sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis
+            iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac,
+            sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio
+            operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni
+            dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi
+            concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea
+            iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur.
+            Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem
+            certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas
+            ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus
+            sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis
+            iudicium purus sit amet fermentum.</p>
+    </div>
+
+    <div class="container">
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <img class="d-block w-100" height="100%" src="{% static './graficos/LOGO.png'%}" alt="Second slide">
+            </div>
+            <div class="col-sm-6">
+                <div class='container-fluid' style="padding:0px;margin:0 ">
+                    <p style='width: 100%;padding-left:2%; text-transform: uppercase;color: white;background-color: rgb(31, 42, 92);font-family: oswald;font-size: 4rem;'>Bosque</p>
+                    <p>
+                        Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi
+                        concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis
+                        rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse
+                        scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti
+                        sibi concilium totius Galliae in diem certam indicere. Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas
+                        ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium
+                        purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam
+                        indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res
+                        quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed
+                        odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus
+                        sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac,
+                        sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.
+                        Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Descarga</h3>
+                <a style="display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                margin:auto;
+                padding-right: 15rem;
+                text-decoration: none;" class='nav-link green ' href="#">SIG</a>
+                <a style="display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                margin-top:5%;
+                padding-right: 15rem;
+                text-decoration: none;" class='nav-link green ' href="#">SIG</a>
+            </div>
+            <div class="col-md-6">
+                <h3>Sigue descubriendo</h3>
+                <a style="display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                margin:auto;
+                padding-right: 15rem;
+                text-decoration: none;" class='nav-link green ' href="#">SIG</a>
+                <a style="display: block;
+                color: white;
+                margin-top:5%;
+                text-align: center;
+                padding: 16px;
+                padding-right: 15rem;
+                text-decoration: none;" class='nav-link green ' href="#">SIG</a>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer style="background-color:rgb(31, 42, 92);" class="text-white">
+        <!-- Grid container -->
+        <div class="container-fl" style="margin: 0px; margin-right:0px">
+            <div class="row">
+                <div class="col-md-6" style="">
+                    <p style="font-family: oswald; font-size: 4.5rem;margin-left:5%">¿Sigues buscando información sobre el</p>
+                    <p style="font-family: oswald; font-size: 4.5rem;margin-left:5%"> río Magdalena?</p>
+                </div>
+                <div class="col-md-2">
+                    <h1 style="font-family: oswald; font-size: 2.0rem">Sitios relacionados</h1>
+                    <hr style="background-color: white; height: 5px;color:white;border-style: solid;border-color: white; width: 50%">
+                    <h1 style="font-family: oswald; font-size: 2.0rem">Tesiunam</h1>
+                    <h1 style="font-family: oswald; font-size: 2.0rem">UAM bibliotecas</h1>
+                    <h1 style="font-family: oswald; font-size: 2.0rem">Scielo</h1>
+                    <h1 style="font-family: oswald; font-size: 2.0rem">IMTA</h1>
+                </div>
+                <div class="col-md-4">
+                    <a style='float: right;'>
+                        <img src="{% static './graficos/Logo_FC_Blanco.png'%}" width="75%" height="75%">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            ©Laboratorio de Ecosistemas de Montaña, Facultad de Ciencias, UNAM, 2021
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+</body>
+<script src="peticiones.js " async defer></script>
+<script src="{% static 'script.js'%} "></script>
+<script src="{% static 'map_home_page/js/qgis2web_expressions.js'%} "></script>
+<script src="{% static 'map_home_page/js/leaflet.js'%} "></script>
+<script src="{% static 'map_home_page/js/leaflet.rotatedMarker.js'%} "></script>
+<script src="{% static 'map_home_page/js/leaflet.pattern.js'%} "></script>
+<script src="{% static 'map_home_page/js/leaflet-hash.js'%} "></script>
+<script src="{% static 'map_home_page/js/Autolinker.min.js'%} "></script>
+<script src="{% static 'map_home_page/js/rbush.min.js'%} "></script>
+<script src="{% static 'map_home_page/js/labelgun.min.js'%} "></script>
+<script src="{% static 'map_home_page/js/labels.js'%} "></script>
+<script src="{% static 'map_home_page/data/ZONAMEDIA_1.js'%} "></script>
+<script src="{% static 'map_home_page/data/ZONABAJA_2.js'%} "></script>
+<script src="{% static 'map_home_page/data/ZMsitiosreferencia_3.js'%} "></script>
+<script src="{% static 'map_home_page/data/ZBsitiosreferencia_4.js'%} "></script>
+<script src="{% static 'map_home_page/data/ZAsitiosreferencia_5.js'%} "></script>
+<script src="{% static 'map_home_page/data/SITIOSDEREFERENCIA_6.js'%} "></script>
+<script src="{% static 'map_home_page/data/ZONAALTA_7.js'%} "></script>
+<script src="{% static 'map_home_page/data/RIOMAGDALENA_8.js'%} "></script>
+<script src="{% static 'map_home_page/map_script.js'%} "></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js " integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0 " crossorigin="anonymous "></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+<script type="text/javascript">
+    window.onload = function() {
+        var chart = new CanvasJS.Chart("chartContainerPie", {
+            theme: "light2",
+            title: {
+                text: "Gaming Consoles Sold in 2012"
+            },
+            data: [{
+                type: "pie",
+                showInLegend: true,
+                toolTipContent: "{y} - #percent %",
+                yValueFormatString: "#,##0,,.## Million",
+                legendText: "{indexLabel}",
+                dataPoints: [{
+                    y: 4181563,
+                    indexLabel: "PlayStation 3"
+                }, {
+                    y: 2175498,
+                    indexLabel: "Wii"
+                }, {
+                    y: 3125844,
+                    indexLabel: "Xbox 360"
+                }, {
+                    y: 1176121,
+                    indexLabel: "Nintendo DS"
+                }, {
+                    y: 1727161,
+                    indexLabel: "PSP"
+                }, {
+                    y: 4303364,
+                    indexLabel: "Nintendo 3DS"
+                }, {
+                    y: 1717786,
+                    indexLabel: "PS Vita"
+                }]
+            }]
+        });
+        chart.render();
+    }
+</script>
+<script type="text/javascript">
+    window.onload = function() {
+        var chart = new CanvasJS.Chart("chartContainer", {
+            title: {
+                text: "My First Chart in CanvasJS"
+            },
+            data: [{
+                // Change type to "doughnut", "line", "splineArea", etc.
+                type: "column",
+                dataPoints: [{
+                    label: "apple",
+                    y: 10
+                }, {
+                    label: "orange",
+                    y: 15
+                }, {
+                    label: "banana",
+                    y: 25
+                }, {
+                    label: "mango",
+                    y: 30
+                }, {
+                    label: "grape",
+                    y: 28
+                }]
+            }]
+        });
+        chart.render();
+    }
+</script>
+
+</html>
