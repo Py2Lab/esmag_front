@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Esmag</title>
+            <script src="https://kit.fontawesome.com/6f27d00af3.js" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="{% static 'map_home_page/css/leaflet.css'%}">
+            <link rel="stylesheet" href="{% static 'map_home_page/css/qgis2web.css'%}"><link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css'%}">
+            <link rel="stylesheet" href="{% static 'styles.css'%}">
+    </head>
+    <body>
+        <div class='logo-container'>
+            <img class="logo" src="{% static './graficos/LOGO.png'%}" alt="">
+        </div>
+        <nav class='nav'>
+        <ul class='nav__menu'>
+            <li class='nav__menu-item'><a href="/static/dist/index.html">Mapa</a></li>
+            <li class='nav__menu-item'><i class="fas fa-chevron-down"><a href="#"></i>Conoce el río</a>
+                <ul class='nav__dropdown'>
+                    <li class='nav__dropdown-item'><a class='lightblue' href="#">Agua</a></li>
+                    <li class='nav__dropdown-item'><a class='green' href="/website/templates/base_view.html">Bosque</a></li>
+                    <li class='nav__dropdown-item'><a class='yellow' href="#">Usuarios</a></li>
+                    <li class='nav__dropdown-item'><a class='darkblue' href="#">Gobernanza</a></li>
+                </ul>
+            </li class='nav__menu-item'>
+            <li class='nav__menu-item'><i class="fas fa-chevron-down"><a href="#"></i><a href="#">Visita el río</a>
+                <ul class='nav__dropdown'>
+                    <li class='nav__dropdown-item'><a class='lightblue' href="#">Sitios por conocer</a></li>
+                    <li class='nav__dropdown-item'><a class='green' href="#">Avisos</a></li>
+                    <li class='nav__dropdown-item'><a class='yellow' href="#">Materiales</a></li>
+                </ul>
+            </li>
+            <li class='nav__menu-item'><a href="/biblioteca/">Biblioteca</a></li>
+            <li class='nav__menu-item'><a href="#">Estrategia</a></li>
+            <li class='nav__menu-item'><a href="#">Contacto</a></li>
+        </ul>
+        <div class='nav__hamburger'>
+            <div class='nav__hamburger-line1'></div>
+            <div class='nav__hamburger-line2'></div>
+            <div class='nav__hamburger-line3'></div>
+        </div>
+    </nav>
+    <section class="header">
+        <div class="header__slider">
+            <div class="header__slide active" style="background-image: url({% static './fotos/cascada.jpg'%})">
+                <div class="header__caption-container">
+                    <div class="caption">
+                        <P class="header__title">El Magdalena</P>
+                        <p class="header__line"></p>
+                        <p class="header__sub">Patrimonio natural de la Ciuidad de México</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__slider">
+            <div class="header__slide" style="background-image: url({% static './fotos/bosque.jpg'%}))">
+                <div class="header__caption-container">
+                    <div class="caption">
+                        <P class="header__title">El Magdalena</P>
+                        <p class="header__line"></p>
+                        <p class="header__sub">Patrimonio natural de la Ciuidad de México</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__slider">
+            <div class="header__slide" style="background-image: url({% static './fotos/ciudad.JPG'%})">
+                <div class="header__caption-container">
+                    <div class="caption">
+                        <P class="header__title">El Magdalena</P>
+                        <p class="header__line"></p>
+                        <p class="header__sub">Patrimonio natural de la Ciuidad de México</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__slider">
+            <div class="header__slide" style="background-image: url({% static './fotos/santeria.jpg'%})">
+                <div class="header__caption-container">
+                    <div class="caption">
+                        <P class="header__title">El Magdalena</P>
+                        <p class="header__line"></p>
+                        <p class="header__sub">Patrimonio natural de la Ciuidad de México</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__slider-indicator"></div>
+        <!-- <img src="./graficos/wave.svg" alt=""> -->
+    </section>
+    <section class="intro">
+        <p class='title-left'>Un río vivo en la CDMX</p>
+        <p class='regular-text'>La cuenca del <span class='blue-highlight'>río Magdalena</span> es una zona única en la Ciudad de México por el buen estado de conservación de sus bosques, su belleza, las especies que alberga, y porque por ella corre el único río de la
+            capital que conserva parte de su caudal con aguas limpias y sin entubar.</p>
+        <p class='regular-text'>El río nace al surponiente de la ciudad, en la alcaldía La Magdalena Contreras. Tiene poco más de 28 kilómetros de longitud, y más de la mitad de su cauce corre por una zona boscosa donde habitan una gran variedad de plantas, animales y hongos.
+             Nos ayuda a mejorar la calidad del aire y el agua de la capital, además de proteger a sus habitantes contra fenómenos naturales. </p>
+        <p class='regular-text'>Muchas personas tienen que ver con él: comuneros, comerciantes y vecinos; deportistas, amantes de la naturaleza y excursionistas que pasean por sus bellos parajes;
+        académicos, estudiantes e investigadores que lo estudian; así como funcionarios públicos y otros miembros de la sociedad que se esfuerzan por preservarlo.</p>
+        <p class='regular-text'>Este sitio es para que lo conozcas y te enamores de él. Así lograremos cuidarlo entre todos.<p>
+        </p>
+    </section>
+    <section class='numeralia'>
+        <div class="numeralia__slider">
+            <div class="numeralia__slide active" style="background-image: url({% static './fotos/plantas-comestibles.jpg'%})">
+                <div class="numeralia__caption-container">
+                    <div class="numeralia__caption">
+                        <P class="numeralia__number">25</P>
+                        <p class="numeralia__text">especies de plantas comestibles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class='numeralia'>
+            <div class="numeralia__slider">
+                <div class="numeralia__slide" style="background-image: url({% static './fotos/cascada.jpg'%})">
+                    <div class="numeralia__caption-container">
+                        <div class="numeralia__caption">
+                            <P class="numeralia__number">25</P>
+                            <p class="numeralia__text">especies de plantas comestibles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="numeralia__controls">
+            <div class="prev"><</div>
+            <div class="next">></div>
+        </div>
+    </section>
+    <section class="ubicacion">
+        <p class='title-right'>Ubicación y zonas </p>
+        <p class='regular-text'>El río nace en el cerro Palma, el cual forma parte de la Sierra de las Cruces. Baja por el Parque Nacional de
+            Los Dinamos, entra con cauce abierto en la ciudad a través de varias colonias de La Magdalena Contreras y llega a la presa
+            Anzaldo, donde inicia el tramo entubado que va por la avenida Río Magdalena hasta llegar a Chimalistac.
+            En Avenida Universidad lo puedes ver desde el puente del templo de Panzacola y en los Viveros de Coyoacán recupera su
+            cauce abierto, antes de volver a ser entubado junto con el río Churubusco.</p>
+        <div class="ubicacion__map-container">
+            <div class="ubicacion__map-controls">
+                <button type="button" class="btn btn-primary btn-block" onclick="mostrarZonaAlta();">Cuenca Alta</button>
+                <button type="button" class="btn btn-secondary btn-block" onclick="mostrarZonaMedia();">Cuenca Media</button>
+                <button type="button" class="btn btn-success btn-block" onclick="mostrarZonaBaja();">Cuenca Baja</button>
+            </div>
+            <div id="map"></div>
+        </div>
+        <p class='regular-text'>De acuerdo con sus características biofísicas y de uso, la cuenca se divide en tres zonas para su estudio: la cuenca alta es
+            la de conservación, va desde Cieneguillas hasta el Cuarto Dinamo; la cuenca media es para la recreación, desde el Cuarto
+            Dinamo hasta La Cañada; y la cuenca baja es la zona urbana, desde el pueblo de La Magdalena hasta la presa Anzaldo.</p>
+    </section>
+
+    </body>
+    <script src="{% static 'script.js'%}"></script>
+    <script src="{% static 'map_home_page/js/qgis2web_expressions.js'%}"></script>
+    <script src="{% static 'map_home_page/js/leaflet.js'%}"></script>
+    <script src="{% static 'map_home_page/js/leaflet.rotatedMarker.js'%}"></script>
+    <script src="{% static 'map_home_page/js/leaflet.pattern.js'%}"></script>
+    <script src="{% static 'map_home_page/js/leaflet-hash.js'%}"></script>
+    <script src="{% static 'map_home_page/js/Autolinker.min.js'%}"></script>
+    <script src="{% static 'map_home_page/js/rbush.min.js'%}"></script>
+    <script src="{% static 'map_home_page/js/labelgun.min.js'%}"></script>
+    <script src="{% static 'map_home_page/js/labels.js'%}"></script>
+    <script src="{% static 'map_home_page/data/ZONAMEDIA_1.js'%}"></script>
+    <script src="{% static 'map_home_page/data/ZONABAJA_2.js'%}"></script>
+    <script src="{% static 'map_home_page/data/ZMsitiosreferencia_3.js'%}"></script>
+    <script src="{% static 'map_home_page/data/ZBsitiosreferencia_4.js'%}"></script>
+    <script src="{% static 'map_home_page/data/ZAsitiosreferencia_5.js'%}"></script>
+    <script src="{% static 'map_home_page/data/SITIOSDEREFERENCIA_6.js'%}"></script>
+    <script src="{% static 'map_home_page/data/ZONAALTA_7.js'%}"></script>
+    <script src="{% static 'map_home_page/data/RIOMAGDALENA_8.js'%}"></script>
+    <script src="{% static 'map_home_page/map_script.js'%}"></script>
+
+</html>

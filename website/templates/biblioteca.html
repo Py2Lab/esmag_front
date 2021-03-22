@@ -1,0 +1,425 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Esmag</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/6f27d00af3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'map_home_page/css/leaflet.css'%}">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/d3.v3.min.js"></script>
+    <script type="text/javascript" src="js/utilities.js"></script>
+    <link rel="stylesheet" href="{% static 'map_home_page/css/qgis2web.css'%}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css'%}">
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body style='padding:0px;align-items:baseline; display:contents'>
+    <div>
+        <nav class='nav'>
+            <div style="float:left">
+                <a class="navbar-brand" href="#">
+                    <img style="margin: 20%" src="{% static './graficos/LOGO.png'%}" width="120" height="80" class="d-inline-block align-top" alt="">
+                </a>
+            </div>
+            <div style="marign-left: 100px">
+                <ul class='nav__menu' style="margin-left: 45vh;">
+                    <li class='nav__menu-item'><a href="/static/dist/index.html">Mapa</a></li>
+                    <li class='nav__menu-item'><i class="fas fa-chevron-down"><a href="#"></i>Conoce el río</a>
+                        <ul class='nav__dropdown'>
+                            <li class='nav__dropdown-item'><a class='lightblue' href="#">Agua</a></li>
+                            <li class='nav__dropdown-item'><a class='green' href="../bosque-principal/">Bosque</a></li>
+                            <li class='nav__dropdown-item'><a class='yellow' href="#">Usuarios</a></li>
+                            <li class='nav__dropdown-item'><a class='darkblue' href="#">Gobernanza</a></li>
+                        </ul>
+                    </li class='nav__menu-item'>
+                    <li class='nav__menu-item'><i class="fas fa-chevron-down"><a href="#"></i><a href="#">Visita el río</a>
+                        <ul class='nav__dropdown'>
+                            <li class='nav__dropdown-item'><a class='lightblue' href="#">Sitios por conocer</a></li>
+                            <li class='nav__dropdown-item'><a class='green' href="#">Avisos</a></li>
+                            <li class='nav__dropdown-item'><a class='yellow' href="#">Materiales</a></li>
+                        </ul>
+                    </li>
+                    <li class='nav__menu-item'><a href="/biblioteca/">Biblioteca</a></li>
+                    <li class='nav__menu-item'><a href="#">Estrategia</a></li>
+                    <li class='nav__menu-item'><a href="#">Contacto</a></li>
+                </ul>
+                <div class='nav__hamburger'>
+                    <div class='nav__hamburger-line1'></div>
+                    <div class='nav__hamburger-line2'></div>
+                    <div class='nav__hamburger-line3'></div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class='container-fluid' style="padding:0px;margin:0">
+        <p style='width: 100%;padding-left:2%; text-transform: uppercase;color: white;background-color: rgb(31, 42, 92);font-family: oswald;font-size: 4rem;'>Biblioteca</p>
+    </div>
+
+    <div class="container-fluid">
+        <div class="intro">
+            <p class='regular-text'>En esta sección hallarás las referencias de todas las publicaciones sobre el río Magdalena que hemos recopilado. Busca por palabra clave o revisa todo el catálogo. Para facilitar tu consulta, organizamos los materiales por eje temático y tipo
+                de publicación.</p>
+        </div>
+    </div>
+    <div>
+        <div style="margin-bottom: 1%;" class="container-fluid" style="margin-top: 10px;">
+            <div class="row">
+                <div class="vertical-menu col-sm-3">
+                    <form style='margin: 10px'>
+                        <h3 class='check-box-vertical'>Buscar:</h3>
+
+                        <input id='search' type="button" id="previous" onclick="get_data()" value="Anterior" />
+
+                        <div id="search">
+                            <input aria-label="Search" autocomplete="on" id="search-input" name="search-input" placeholder="Search" speech type="search">
+                            <svg viewbox="0 0 24 24">
+                              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                              <path d="M0 0h24v24H0z"  fill="none" >
+                            </svg>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Autor</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Palabra clave</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Titulo</label>
+                        </div>
+                        <br/>
+                        <br/>
+                        <h3 class='check-box-vertical'>Por eje:</h3>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Agua</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Bosque</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Usuarios</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Gobernanza</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Todos</label>
+                        </div>
+                        <br/>
+                        <br/>
+                        <h3 class='check-box-vertical'>Por tipo de publicacion:</h3>
+
+                        <div class="custom-control custom-radio" id='rates'>
+                            <input type="radio" class="custom-control-input" id="r1" name="rate" value="/tesis/">
+                            <label class="custom-control-label" for="customCheck1">Tesis</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="r2" name="rate" value="/libros/">
+                            <label class="custom-control-label" for="customCheck1">Libros</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="r3" name="rate" value="/articulos/">
+                            <label class="custom-control-label" for="customCheck1">Articulos</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="r4" name="rate" value="/Informes/">
+                            <label class="custom-control-label" for="customCheck1">Informes</label>
+                        </div>
+
+                        <br/>
+                        <br/>
+                    </form>
+                </div>
+                <div class="col-sm-8">
+                    <div class='container'>
+                        <div>
+                            <ul class="nav nav-pills nav-fill">
+                                <li class="nav-item lightblue">
+                                    <a class="nav-link " style="font-size: 2.0rem; color:white" href="bosque-principal.html">Agua</a>
+                                </li>
+                                <li class="nav-item green">
+                                    <a class="nav-link" style="font-size: 2.0rem; color:white" href="bosque-medio.html">Agua</a>
+                                </li>
+                                <li class="nav-item yellow">
+                                    <a class="nav-link" style="font-size: 2.0rem; color:white" href="bosque-medio.html">Gobernanza</a>
+                                </li>
+                                <li class="nav-item darkblue">
+                                    <a class="nav-link" style="font-size: 2.0rem; color:white" href="bosque-bajo.html">Sig</a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div id="SectionName" style="display:block">
+                            <div>
+                                <div class="intro">
+                                    <p class='regular-text'>En esta sección hallarás las referencias de todas las publicaciones sobre el río Magdalena que hemos recopilado. Busca por palabra clave o revisa todo el catálogo. Para facilitar tu consulta, organizamos los materiales
+                                        por eje temático y tipo de publicación.</p>
+                                </div>
+                            </div>
+                            <div class='container' style='color:white;background-color: rgb(31, 42, 92);font-family: oswald;font-size: 1.5rem; margin:auto'>
+                                <div class='row'>
+                                    <div class="col-md-4">
+                                        <p>14 tesis</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p>2 libros</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p>10 articuos</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='container'>
+                                <div class='row'>
+                                    <div class="col-md-4">
+                                        <p style="font-family: 'Robot slab'; font-size:  2.0rem; margin-bottom: 15%;">Tesis</p>
+                                        <p style="font-family: 'Robot slab'; font-size: 2.0rem;">Consulta tesis sobre el agua del Magdalena con temas tan diversos como monitoreos participativos y suministro de agua en la Ciudad de México.</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p style="font-family: 'Robot slab'; font-size:  2.0rem;  margin-bottom: 15%;">Libros</p>
+                                        <p style="font-family: 'Robot slab'; font-size:  2.0rem;">Lee acerca de la importancia de recuperar el río Magdalena, la calidad de su agua y sus servicios ecosistémicos.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p style="font-family: 'Robot slab'; font-size:  2.0rem;  margin-bottom: 15%;">Articulos</p>
+                                        <p style="font-family: 'Robot slab'; font-size: 2.0rem;">Conoce más sobre la historia del río Magdalena y del contexto del rescate de ríos urbanos en el mundo.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='container' style='color:white;background-color: rgb(31, 42, 92);font-family: oswald;font-size: 1.5rem;'>
+                                <div class='row'>
+                                    <div class="col-md-4">
+                                        <p>14 informes</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p>2 capitulos</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p>10 documentos en base de datos</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='container'>
+                                <div class='row'>
+                                    <div class="col-md-4">
+                                        <p style="font-family: 'Robot slab'; font-size: 2.0rem;  margin-bottom: 15%;">Informes</p>
+                                        <p style="font-family: 'Robot slab'; font-size: 2.0rem;">Encuentra información sobre las políticas de manejo integral de los recursos hídricos en la cuenca.</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p style="font-family: 'Robot slab'; font-size: 2.0rem;  margin-bottom: 15%;">Capítulos</p>
+                                        <p style="font-family: 'Robot slab'; font-size: 2.0rem;">Aprende más sobre la reutilización del agua de lluvia en la cuenca del Magdalena.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p style="font-family: 'Robot slab'; font-size: 2.0rem;  margin-bottom: 15%;">Bases de datos</p>
+                                        <p style="font-family: 'Robot slab'; font-size: 2.0rem;">Contrasta los diferentes estudios de calidad de agua por año de muestreo, autor, parámetros, puntos y parajes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="SectionList" style='display:none;'>
+
+                            <div style="margin: 1%">
+                                <p style='width: 75%;padding-left:2%; color: white;background-color: rgb(31, 42, 92);font-family: oswald;font-size: 3.5rem;'>TESIS / 14 documentos</p>
+                            </div>
+                            <div class="intro">
+                                <p class='regular-text'>Consulta tesis sobre el agua del Magdalena con temas tan diversos como monitoreos participativos y suministro de agua en la Ciudad de México.</p>
+                            </div>
+                            <div id="list" class='row justify-content-center' style='margin-top: 10px'>
+                            </div>
+                            <div class='container'>
+                                <div class="row">
+                                    <div class="col-md-6 col-6 d-flex justify-content-center">
+                                        <input type="button" id="previous" onclick="previousPage()" value="Anterior" />
+                                    </div>
+                                    <div class="col-md-6 col-6 d-flex justify-content-center">
+                                        <input type="button" id="next" onclick="nextPage()" value="Siguiente" />
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer style="background-color:rgb(31, 42, 92);" class="text-white">
+            <!-- Grid container -->
+            <div class="container-fl" style="margin: 0px; margin-right:0px">
+                <div class="row">
+                    <div class="col-md-6" style="">
+                        <p style="font-family: oswald; font-size: 4.5rem;margin-left:5%">¿Sigues buscando información sobre el</p>
+                        <p style="font-family: oswald; font-size: 4.5rem;margin-left:5%"> río Magdalena?</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h1 style="font-family: oswald; font-size: 2.0rem">Sitios relacionados</h1>
+                        <hr style="background-color: white; height: 5px;color:white;border-style: solid;border-color: white; width: 50%">
+                        <h1 style="font-family: oswald; font-size: 2.0rem">Tesiunam</h1>
+                        <h1 style="font-family: oswald; font-size: 2.0rem">UAM bibliotecas</h1>
+                        <h1 style="font-family: oswald; font-size: 2.0rem">Scielo</h1>
+                        <h1 style="font-family: oswald; font-size: 2.0rem">IMTA</h1>
+                    </div>
+                    <div class="col-md-4">
+                        <a style='float: right;'>
+                            <img src="{% static './graficos/Logo_FC_Blanco.png'%}" width="75%" height="75%">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Grid container -->
+            <!-- Copyright -->
+            <div class="p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                ©Laboratorio de Ecosistemas de Montaña, Facultad de Ciencias, UNAM, 2021
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+</body>
+
+<script src="peticiones.js" async defer></script>
+<script src="{% static 'script.js'%}"></script>
+<script src="{% static 'map_home_page/js/qgis2web_expressions.js'%}"></script>
+<script src="{% static 'map_home_page/js/leaflet.js'%}"></script>
+<script src="{% static 'map_home_page/js/leaflet.rotatedMarker.js'%}"></script>
+<script src="{% static 'map_home_page/js/leaflet.pattern.js'%}"></script>
+<script src="{% static 'map_home_page/js/leaflet-hash.js'%}"></script>
+<script src="{% static 'map_home_page/js/Autolinker.min.js'%}"></script>
+<script src="{% static 'map_home_page/js/rbush.min.js'%}"></script>
+<script src="{% static 'map_home_page/js/labelgun.min.js'%}"></script>
+<script src="{% static 'map_home_page/js/labels.js'%}"></script>
+<script src="{% static 'map_home_page/data/ZONAMEDIA_1.js'%}"></script>
+<script src="{% static 'map_home_page/data/ZONABAJA_2.js'%}"></script>
+<script src="{% static 'map_home_page/data/ZMsitiosreferencia_3.js'%}"></script>
+<script src="{% static 'map_home_page/data/ZBsitiosreferencia_4.js'%}"></script>
+<script src="{% static 'map_home_page/data/ZAsitiosreferencia_5.js'%}"></script>
+<script src="{% static 'map_home_page/data/SITIOSDEREFERENCIA_6.js'%}"></script>
+<script src="{% static 'map_home_page/data/ZONAALTA_7.js'%}"></script>
+<script src="{% static 'map_home_page/data/RIOMAGDALENA_8.js'%}"></script>
+<script src="{% static 'map_home_page/map_script.js'%}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    var list;
+
+    function get_data() {
+        ShowAndHide();
+        var endpoint = "https://esmag.com.mx" + $("input[type='radio'][name='rate']:checked").val();
+        console.log(endpoint);
+
+        fetch(endpoint)
+            .then((response) => {
+                return response.json();
+            })
+            .then((html) => {
+                list = html;
+                console.log(list);
+                return list;
+            });
+    }
+    console.log(list)
+    var pageList = new Array();
+    var currentPage = 1;
+    var numberPerPage = 6;
+    var numberOfPages = 0;
+
+    function getNumberOfPages() {
+        return Math.ceil(list.length / numberPerPage);
+    }
+
+    function nextPage() {
+        currentPage += 1;
+        loadList();
+    }
+
+    function previousPage() {
+        currentPage -= 1;
+        loadList();
+    }
+
+    function loadList() {
+        var begin = ((currentPage - 1) * numberPerPage);
+        var end = begin + numberPerPage;
+        pageList = list.slice(begin, end);
+        drawList();
+        check();
+    }
+
+    function drawList() {
+        document.getElementById("list").innerHTML = "";
+        var x = document.getElementById('SectionName');
+        for (r = 0; r < pageList.length; r++) {
+            if (r % 2) {
+                x.style.display = 'none';
+                console.log("Desaparezco");
+                document.getElementById("list").innerHTML += "<div class='card col-sm-3' style='background-color: rgb(164, 204, 228); '>" +
+                    "<div style='margin: 10px'>" +
+                    "<h3 style='font-family: oswald; margin-bottom: 30%' for='" + r + "'>" + pageList[r]['title'] + "</h3>" +
+                    "<h3 style='font-family: oswald'>" + pageList[r]['autor'] + "</h3>" +
+                    "<h3 style='font-family: oswald'>" + pageList[r]['university'] + "</h3>" +
+                    "<h5 style='font-family: oswald'>" + pageList[r]['grade'] + "</h5>" +
+                    "<form style='float:right' action=" + pageList[r]['url'] + ">" + "<input type='submit' value='Consultar' /> </form> " +
+                    "</div>" +
+                    "</div>";
+            } else {
+                x.style.display = 'none';
+                document.getElementById("list").innerHTML += "<div class='card col-sm-3' style='background-color:rgb(4, 94, 155);'>" +
+                    "<div style='margin: 10px'>" +
+                    "<h3 style='font-family: oswald;margin-bottom: 30%' for='" + r + "'>" + pageList[r]['title'] + "</h3>" +
+                    "<h3 style='font-family: oswald'>" + pageList[r]['autor'] + "</h3>" +
+                    "<h3 style='font-family: oswald'>" + pageList[r]['university'] + "</h3>" +
+                    "<h5 style='font-family: oswald'>" + pageList[r]['grade'] + "</h5>" +
+                    "<form style='float:right; margin: 3px' action=" + pageList[r]['url'] + ">" + "<input type='submit' value='Consultar' /> </form> " +
+                    "</div>" +
+                    "</div>";
+            }
+        }
+    }
+
+    function check() {
+        document.getElementById("next").disabled = currentPage == getNumberOfPages() ? true : false;
+        document.getElementById("previous").disabled = currentPage == 1 ? true : false;
+    }
+
+    function load() {
+        loadList();
+    }
+
+    function ShowAndHide() {
+        console.log("desaparezco")
+        var name_section = document.getElementById('SectionName');
+        var list_section = document.getElementById('SectionList');
+
+        if (name_section.style.display == 'none') {
+            name_section.style.display = 'block';
+            console.log("Desaparezco");
+        } else {
+            name_section.style.display = 'none';
+            list_section.style.display = 'block';
+        }
+    }
+
+    window.onload = load;
+</script>
+
+</html>
