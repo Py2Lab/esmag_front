@@ -1,4 +1,4 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://kit.fontawesome.com/6f27d00af3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% static 'map_home_page/css/leaflet.css'%}">
-    <link rel="stylesheet" href="{% static 'map_home_page/css/qgis2web.css'%}">
-    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css'%}">
-    <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <link rel="stylesheet" href="map_home_page/css/leaflet.css">
+    <link rel="stylesheet" href="map_home_page/css/qgis2web.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -77,25 +77,24 @@
     <div>
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item lightblue">
-                <a class="nav-link " style="font-size: 2.0rem; color:white" href="bosque-principal.html">Bosque principal</a>
+                <a class="nav-link " style="font-size: 2.0rem; color:white" href="#">Active</a>
             </li>
             <li class="nav-item green">
-                <a class="nav-link" style="font-size: 2.0rem; color:white" href="bosque-medio.html">Bosque alto</a>
+                <a class="nav-link" style="font-size: 2.0rem; color:white" href="#">Longer nav link</a>
             </li>
             <li class="nav-item yellow">
-                <a class="nav-link" style="font-size: 2.0rem; color:white" href="bosque-medio.html">Bosque medio</a>
+                <a class="nav-link" style="font-size: 2.0rem; color:white" href="#">Link</a>
             </li>
             <li class="nav-item darkblue">
-                <a class="nav-link" style="font-size: 2.0rem; color:white" href="bosque-bajo.html">Bosque bajo</a>
+                <a class="nav-link" style="font-size: 2.0rem; color:white" href="#">Disabled</a>
             </li>
         </ul>
     </div>
 
-
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-mdb-ride="carousel">
         <section class="header">
             <div class="header__slider">
-                <div class="header__slide active" style="background-image: url({% static './fotos/cascada.jpg'%})">
+                <div class="header__slide active" style="background-image: url(./fotos/cascada.jpg)">
                     <div class="header__caption-container">
                         <div class="caption">
                             <P class="header__title">El Magdalena</P>
@@ -106,7 +105,7 @@
                 </div>
             </div>
             <div class="header__slider">
-                <div class="header__slide active" style="background-image: url({% static './fotos/cascada.jpg'%})">
+                <div class="header__slide active" style="background-image: url(./fotos/cascada.jpg)">
                     <div class="header__caption-container">
                         <div class="caption">
                             <P class="header__title">El Magdalena</P>
@@ -117,7 +116,7 @@
                 </div>
             </div>
             <div class="header__slider">
-                <div class="header__slide" style="background-image: url({% static './fotos/ciudad.JPG'%})">
+                <div class="header__slide" style="background-image: url(./fotos/ciudad.JPG)">
                     <div class="header__caption-container">
                         <div class="caption">
                             <P class="header__title">El Magdalena</P>
@@ -128,7 +127,7 @@
                 </div>
             </div>
             <div class="header__slider">
-                <div class="header__slide" style="background-image: url({% static './fotos/santeria.jpg'%})">
+                <div class="header__slide" style="background-image: url(./fotos/santeria.jpg)">
                     <div class="header__caption-container">
                         <div class="caption">
                             <P class="header__title">El Magdalena</P>
@@ -175,7 +174,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <img class="d-block w-100" height="600" src="{% static './graficos/LOGO.png'%}" alt="Second slide">
+                <img class="d-block w-100" height="600" src="./graficos/LOGO.png" alt="Second slide">
             </div>
             <div class="col-sm-6 text-center">
                 <p>
@@ -221,7 +220,7 @@
                 </p>
             </div>
             <div class="col-sm-6">
-                <img class="d-block w-100" height="600" src="{% static './graficos/LOGO.png'%}" alt="Second slide">
+                <img class="d-block w-100" height="600" src="./graficos/LOGO.png" alt="Second slide">
             </div>
         </div>
     </div>
@@ -232,7 +231,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <img class="d-block w-100" height="600" src="{% static './graficos/LOGO.png'%}" alt="Second slide">
+                <img class="d-block w-100" height="600" src="./graficos/LOGO.png" alt="Second slide">
             </div>
             <div class="col-sm-6 text-center">
                 <p>
@@ -255,7 +254,7 @@
     </div>
 
     <div class="container-fluid">
-        <img class="d-block w-100" height="600" src="{% static './graficos/LOGO.png'%}" alt="Second slide">
+        <img class="d-block w-100" height="600" src="./graficos/LOGO.png" alt="Second slide">
     </div>
 
     <div class="container">
@@ -286,7 +285,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6">
-                <img class="d-block w-100" height="100%" src="{% static './graficos/LOGO.png'%}" alt="Second slide">
+                <img class="d-block w-100" height="100%" src="./graficos/LOGO.png" alt="Second slide">
             </div>
             <div class="col-sm-6">
                 <div class='container-fluid' style="padding:0px;margin:0 ">
@@ -370,7 +369,7 @@
                 </div>
                 <div class="col-md-4">
                     <a style='float: right;'>
-                        <img src="{% static './graficos/Logo_FC_Blanco.png'%}" width="75%" height="75%">
+                        <img src="./graficos/Logo_FC_Blanco.png" width="75%" height="75%">
                     </a>
                 </div>
             </div>
@@ -385,25 +384,25 @@
     <!-- Footer -->
 </body>
 <script src="peticiones.js " async defer></script>
-<script src="{% static 'script.js'%} "></script>
-<script src="{% static 'map_home_page/js/qgis2web_expressions.js'%} "></script>
-<script src="{% static 'map_home_page/js/leaflet.js'%} "></script>
-<script src="{% static 'map_home_page/js/leaflet.rotatedMarker.js'%} "></script>
-<script src="{% static 'map_home_page/js/leaflet.pattern.js'%} "></script>
-<script src="{% static 'map_home_page/js/leaflet-hash.js'%} "></script>
-<script src="{% static 'map_home_page/js/Autolinker.min.js'%} "></script>
-<script src="{% static 'map_home_page/js/rbush.min.js'%} "></script>
-<script src="{% static 'map_home_page/js/labelgun.min.js'%} "></script>
-<script src="{% static 'map_home_page/js/labels.js'%} "></script>
-<script src="{% static 'map_home_page/data/ZONAMEDIA_1.js'%} "></script>
-<script src="{% static 'map_home_page/data/ZONABAJA_2.js'%} "></script>
-<script src="{% static 'map_home_page/data/ZMsitiosreferencia_3.js'%} "></script>
-<script src="{% static 'map_home_page/data/ZBsitiosreferencia_4.js'%} "></script>
-<script src="{% static 'map_home_page/data/ZAsitiosreferencia_5.js'%} "></script>
-<script src="{% static 'map_home_page/data/SITIOSDEREFERENCIA_6.js'%} "></script>
-<script src="{% static 'map_home_page/data/ZONAALTA_7.js'%} "></script>
-<script src="{% static 'map_home_page/data/RIOMAGDALENA_8.js'%} "></script>
-<script src="{% static 'map_home_page/map_script.js'%} "></script>
+<script src="script.js "></script>
+<script src="map_home_page/js/qgis2web_expressions.js "></script>
+<script src="map_home_page/js/leaflet.js "></script>
+<script src="map_home_page/js/leaflet.rotatedMarker.js "></script>
+<script src="map_home_page/js/leaflet.pattern.js "></script>
+<script src="map_home_page/js/leaflet-hash.js "></script>
+<script src="map_home_page/js/Autolinker.min.js "></script>
+<script src="map_home_page/js/rbush.min.js "></script>
+<script src="map_home_page/js/labelgun.min.js "></script>
+<script src="map_home_page/js/labels.js "></script>
+<script src="map_home_page/data/ZONAMEDIA_1.js "></script>
+<script src="map_home_page/data/ZONABAJA_2.js "></script>
+<script src="map_home_page/data/ZMsitiosreferencia_3.js "></script>
+<script src="map_home_page/data/ZBsitiosreferencia_4.js "></script>
+<script src="map_home_page/data/ZAsitiosreferencia_5.js "></script>
+<script src="map_home_page/data/SITIOSDEREFERENCIA_6.js "></script>
+<script src="map_home_page/data/ZONAALTA_7.js "></script>
+<script src="map_home_page/data/RIOMAGDALENA_8.js "></script>
+<script src="map_home_page/map_script.js "></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js " integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0 " crossorigin="anonymous "></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 

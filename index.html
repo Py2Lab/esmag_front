@@ -1,17 +1,16 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
         <title>Esmag</title>
             <script src="https://kit.fontawesome.com/6f27d00af3.js" crossorigin="anonymous"></script>
-            <link rel="stylesheet" href="{% static 'map_home_page/css/leaflet.css'%}">
-            <link rel="stylesheet" href="{% static 'map_home_page/css/qgis2web.css'%}"><link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css'%}">
-            <link rel="stylesheet" href="{% static 'styles.css'%}">
+            <link rel="stylesheet" href="map_home_page/css/leaflet.css">
+            <link rel="stylesheet" href="map_home_page/css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+            <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <div class='logo-container'>
-            <img class="logo" src="{% static './graficos/LOGO.png'%}" alt="">
+            <img class="logo" src="./graficos/LOGO.png" alt="">
         </div>
         <nav class='nav'>
         <ul class='nav__menu'>
@@ -43,7 +42,7 @@
     </nav>
     <section class="header">
         <div class="header__slider">
-            <div class="header__slide active" style="background-image: url({% static './fotos/cascada.jpg'%})">
+            <div class="header__slide active" style="background-image: url(./fotos/cascada.jpg)">
                 <div class="header__caption-container">
                     <div class="caption">
                         <P class="header__title">El Magdalena</P>
@@ -54,7 +53,7 @@
             </div>
         </div>
         <div class="header__slider">
-            <div class="header__slide" style="background-image: url({% static './fotos/bosque.jpg'%}))">
+            <div class="header__slide" style="background-image: url(./fotos/bosque.jpg))">
                 <div class="header__caption-container">
                     <div class="caption">
                         <P class="header__title">El Magdalena</P>
@@ -65,7 +64,7 @@
             </div>
         </div>
         <div class="header__slider">
-            <div class="header__slide" style="background-image: url({% static './fotos/ciudad.JPG'%})">
+            <div class="header__slide" style="background-image: url(./fotos/ciudad.JPG)">
                 <div class="header__caption-container">
                     <div class="caption">
                         <P class="header__title">El Magdalena</P>
@@ -76,7 +75,7 @@
             </div>
         </div>
         <div class="header__slider">
-            <div class="header__slide" style="background-image: url({% static './fotos/santeria.jpg'%})">
+            <div class="header__slide" style="background-image: url(./fotos/santeria.jpg)">
                 <div class="header__caption-container">
                     <div class="caption">
                         <P class="header__title">El Magdalena</P>
@@ -102,7 +101,7 @@
     </section>
     <section class='numeralia'>
         <div class="numeralia__slider">
-            <div class="numeralia__slide active" style="background-image: url({% static './fotos/plantas-comestibles.jpg'%})">
+            <div class="numeralia__slide active" style="background-image: url(./fotos/plantas-comestibles.jpg)">
                 <div class="numeralia__caption-container">
                     <div class="numeralia__caption">
                         <P class="numeralia__number">25</P>
@@ -113,7 +112,7 @@
         </div>
         <section class='numeralia'>
             <div class="numeralia__slider">
-                <div class="numeralia__slide" style="background-image: url({% static './fotos/cascada.jpg'%})">
+                <div class="numeralia__slide" style="background-image: url(./fotos/cascada.jpg)">
                     <div class="numeralia__caption-container">
                         <div class="numeralia__caption">
                             <P class="numeralia__number">25</P>
@@ -148,24 +147,24 @@
     </section>
 
     </body>
-    <script src="{% static 'script.js'%}"></script>
-    <script src="{% static 'map_home_page/js/qgis2web_expressions.js'%}"></script>
-    <script src="{% static 'map_home_page/js/leaflet.js'%}"></script>
-    <script src="{% static 'map_home_page/js/leaflet.rotatedMarker.js'%}"></script>
-    <script src="{% static 'map_home_page/js/leaflet.pattern.js'%}"></script>
-    <script src="{% static 'map_home_page/js/leaflet-hash.js'%}"></script>
-    <script src="{% static 'map_home_page/js/Autolinker.min.js'%}"></script>
-    <script src="{% static 'map_home_page/js/rbush.min.js'%}"></script>
-    <script src="{% static 'map_home_page/js/labelgun.min.js'%}"></script>
-    <script src="{% static 'map_home_page/js/labels.js'%}"></script>
-    <script src="{% static 'map_home_page/data/ZONAMEDIA_1.js'%}"></script>
-    <script src="{% static 'map_home_page/data/ZONABAJA_2.js'%}"></script>
-    <script src="{% static 'map_home_page/data/ZMsitiosreferencia_3.js'%}"></script>
-    <script src="{% static 'map_home_page/data/ZBsitiosreferencia_4.js'%}"></script>
-    <script src="{% static 'map_home_page/data/ZAsitiosreferencia_5.js'%}"></script>
-    <script src="{% static 'map_home_page/data/SITIOSDEREFERENCIA_6.js'%}"></script>
-    <script src="{% static 'map_home_page/data/ZONAALTA_7.js'%}"></script>
-    <script src="{% static 'map_home_page/data/RIOMAGDALENA_8.js'%}"></script>
-    <script src="{% static 'map_home_page/map_script.js'%}"></script>
+    <script src="script.js"></script>
+    <script src="map_home_page/js/qgis2web_expressions.js"></script>
+    <script src="map_home_page/js/leaflet.js"></script>
+    <script src="map_home_page/js/leaflet.rotatedMarker.js"></script>
+    <script src="map_home_page/js/leaflet.pattern.js"></script>
+    <script src="map_home_page/js/leaflet-hash.js"></script>
+    <script src="map_home_page/js/Autolinker.min.js"></script>
+    <script src="map_home_page/js/rbush.min.js"></script>
+    <script src="map_home_page/js/labelgun.min.js"></script>
+    <script src="map_home_page/js/labels.js"></script>
+    <script src="map_home_page/data/ZONAMEDIA_1.js"></script>
+    <script src="map_home_page/data/ZONABAJA_2.js"></script>
+    <script src="map_home_page/data/ZMsitiosreferencia_3.js"></script>
+    <script src="map_home_page/data/ZBsitiosreferencia_4.js"></script>
+    <script src="map_home_page/data/ZAsitiosreferencia_5.js"></script>
+    <script src="map_home_page/data/SITIOSDEREFERENCIA_6.js"></script>
+    <script src="map_home_page/data/ZONAALTA_7.js"></script>
+    <script src="map_home_page/data/RIOMAGDALENA_8.js"></script>
+    <script src="map_home_page/map_script.js"></script>
 
 </html>
