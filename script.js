@@ -166,6 +166,47 @@ function changeNumeraliaSlide() {
     numeraliaSlides[numeraliaIndex].classList.add('active');
 }
 
+// mapa
+const botonAlta = document.querySelector('.btn-primary');
+const botonMedia = document.querySelector('.btn-secondary');
+const botonBaja = document.querySelector('.btn-success');
+const mapButtons = document.querySelectorAll('.btn-block');
+const mapText = document.querySelector('.map-text');
+const title = document.querySelector('.map__description-title');
+const icon = document.querySelector('.map__description-img')
+
+
+botonAlta.addEventListener('click', function() {
+    for (let i = 0; i < mapButtons.length; i++) {
+        mapButtons[i].classList.remove('active');
+    }
+    botonAlta.classList.add('active');
+    title.innerHTML = 'Cuenca alta';
+    icon.src = "./graficos/icono_alta_azul.svg";
+    mapText.innerHTML = 'Aquí surge el río de escurrimientos superficiales: ojos de agua, charcos y lloraderos. El aire es puro y hay explanadas de pastizales con pinos de la especie <i>P. hartwegii</i>. La huella humana es escasa y el agua, cristalina.'
+});
+
+botonMedia.addEventListener('click', function() {
+    for (let i = 0; i < mapButtons.length; i++) {
+        mapButtons[i].classList.remove('active');
+    }
+    botonMedia.classList.add('active');
+    title.innerHTML = 'Cuenca media';
+    icon.src = "./graficos/icono_media_azul.svg";
+    mapText.innerHTML = 'El bosque se vuelve más denso: los oyameles crecen por doquier, junto con encinos y hongos. La actividad humana se intensifica y con ella el deterioro de la vegetación y la calidad del agua.';
+});
+
+botonBaja.addEventListener('click', function() {
+    for (let i = 0; i < mapButtons.length; i++) {
+        mapButtons[i].classList.remove('active');
+    }
+    botonBaja.classList.add('active');
+    title.innerHTML = 'Cuenca baja';
+    icon.src = "./graficos/icono_baja_azul.svg";
+    mapText.innerHTML = 'En la zona urbana, el río se transforma. Al principio todavía corre a cielo abierto; en su descenso se mezcla con agua de desagües y de otros ríos contaminados. Conserva algo de vegetación en sus orillas, pero ya no podemos hablar de bosque. Finalmente es entubado y desaparece bajo de la ciudad.';
+});
+
+
 function getThesis(callback) {
     
 
@@ -186,4 +227,5 @@ function getThesis(callback) {
     xhr.send(null);
 
 }
+
 

@@ -148,17 +148,24 @@
             Anzaldo, donde inicia el tramo entubado que va por la avenida Río Magdalena hasta llegar a Chimalistac.
             En Avenida Universidad lo puedes ver desde el puente del templo de Panzacola y en los Viveros de Coyoacán recupera su
             cauce abierto, antes de volver a ser entubado junto con el río Churubusco.</p>
-        <div class="ubicacion__map-container">
-            <div class="ubicacion__map-controls">
-                <button type="button" class="btn btn-primary btn-block" onclick="mostrarZonaAlta();">Cuenca Alta</button>
-                <button type="button" class="btn btn-secondary btn-block" onclick="mostrarZonaMedia();">Cuenca Media</button>
-                <button type="button" class="btn btn-success btn-block" onclick="mostrarZonaBaja();">Cuenca Baja</button>
+        <div class="map__container">
+            <div class="map__controls">
+                <button type="button" class="btn btn-primary btn-block active" onclick="mostrarZonaAlta();">Cuenca alta</button>
+                <button type="button" class="btn btn-secondary btn-block" onclick="mostrarZonaMedia();">Cuenca media</button>
+                <button type="button" class="btn btn-success btn-block" onclick="mostrarZonaBaja();">Cuenca baja</button>
+                <div class="map__description">
+                    <div class="map__description-icon">   
+                        <img class="map__description-img" src="./graficos/icono_alta_azul.svg" alt="">
+                        <p class="map__description-title">Cuenca alta</p>
+                    </div>
+                    <p class="map-text">Aquí surge el río de escurrimientos superficiales: ojos de agua, charcos y lloraderos. El aire es puro y hay explanadas de pastizales con pinos de la especie <i>P. hartwegii</i>. La huella humana es escasa y el agua, cristalina.</p>
+                </div>
             </div>
             <div id="map"></div>
         </div>
         <p class='regular-text'>De acuerdo con sus características biofísicas y de uso, la cuenca se divide en tres zonas para su estudio: la cuenca alta es
-            la de conservación, va desde Cieneguillas hasta el Cuarto Dinamo; la cuenca media es para la recreación, desde el Cuarto
-            Dinamo hasta La Cañada; y la cuenca baja es la zona urbana, desde el pueblo de La Magdalena hasta la presa Anzaldo.</p>
+            la de <span class='blue-highlight'>conservación</span>, va desde Cieneguillas hasta el Cuarto Dinamo; la cuenca media es para la <span class='blue-highlight'>recreación</span>, desde el Cuarto
+            Dinamo hasta La Cañada; y la cuenca baja es la <span class='blue-highlight'>zona urbana</span>, desde el pueblo de La Magdalena hasta la presa Anzaldo.</p>
     </section>
 
     </body>
