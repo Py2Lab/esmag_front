@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Esmag</title>
@@ -98,27 +99,28 @@
                         <br/>
                         <br/>
                         <h3 class='check-box-vertical'>Por eje:</h3>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+
+                        <div class="custom-control custom-radio" id='rates-2'>
+                            <input type="radio" class="custom-control-input" id="r-2-1" name="rate2" value="2">
                             <label class="custom-control-label" for="customCheck1">Agua</label>
                         </div>
-
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="r-2-2" name="rate2" value="3">
                             <label class="custom-control-label" for="customCheck1">Bosque</label>
                         </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="r-2-3" name="rate2" value="4">
                             <label class="custom-control-label" for="customCheck1">Usuarios</label>
                         </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="r-2-4" name="rate2" value="5">
                             <label class="custom-control-label" for="customCheck1">Gobernanza</label>
                         </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="r-2-5" name="rate2" value="6">
                             <label class="custom-control-label" for="customCheck1">Todos</label>
                         </div>
+
                         <br/>
                         <br/>
                         <h3 class='check-box-vertical'>Por tipo de publicacion:</h3>
@@ -234,7 +236,6 @@
                             </div>
                         </div>
                         <div id="SectionList" style='display:none;'>
-
                             <div style="margin: 1%">
                                 <p style='width: 75%;padding-left:2%; color: white;background-color: rgb(31, 42, 92);font-family: oswald;font-size: 3.5rem;'>TESIS / 14 documentos</p>
                             </div>
@@ -321,21 +322,24 @@
     var list;
 
     function get_data() {
-        ShowAndHide();
-        var endpoint = "https://esmag.com.mx" + $("input[type='radio'][name='rate']:checked").val();
-        console.log(endpoint);
 
-        fetch(endpoint)
-            .then((response) => {
-                return response.json();
-            })
-            .then((html) => {
-                list = html;
-                console.log(list);
-                return list;
-            });
+        var endpoint = "https://admin.esmag.com.mx/api" + $("input[type='radio'][name='rate']:checked").val();
+        var data = {
+            "id": $("input[type='radio'][name='rate2']:checked").val(),
+            "sting": "cadena_a_buscar"
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                list = JSON.parse(xhr.response);
+                ShowAndHide();
+            }
+        }
+        xhr.open("GET", endpoint, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify(data));
     }
-    console.log(list)
+
     var pageList = new Array();
     var currentPage = 1;
     var numberPerPage = 6;
