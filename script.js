@@ -1,64 +1,27 @@
-// MENU
 
-const nav = document.querySelector('.nav');
-const bottomOfNav = nav.offsetTop;
-const logoImg = document.querySelector('.logo');
-let lastScrollTop = 45;
-
-function hideNav() {
-    let scrollTop = window.scrollY;
-
-    if (scrollTop > lastScrollTop) {
-        nav.style.top = "-120px";
-    } else {
-        nav.style.top = 0;
-    }
-
-    lastScrollTop = scrollTop;
-}
-
-function fixNav() {
-    if (window.scrollY > 45) {
-        logoImg.classList.add('resize');
-    } else {
-        logoImg.classList.remove('resize');
-    }
-
-    if (window.scrollY > nav.offsetHeight) {
-        nav.classList.add('shadow');
-    } else {
-        nav.classList.remove('shadow');
-    }
-}
-
-window.addEventListener('scroll', fixNav);
-window.addEventListener('scroll', hideNav);
-
-// SIDE NAV
 
 const navSlide = () => {
     const hamburger = document.querySelector(".nav__hamburger");
-    const sidebar = document.querySelector(".sidebar");
-    const dropdownParent = document.querySelector('.sidebar__dropdown-parent');
-    const dropdown = document.querySelector('.sidebar__dropdown');
-    const arrow = document.querySelector('.fa-sort-down');
-    const close = document.querySelector('.fa-times')
+    const menu = document.querySelector(".nav__menu");
+    const menuItems = document.querySelectorAll(".nav__menu-item");
+
 
     hamburger.addEventListener('click', () => {
-        sidebar.classList.add('sidebar--active');
-        hamburger.classList.add('nav__hamburger--hidden')
-    })
+        menu.classList.toggle('nav__menu--active');
 
-    dropdownParent.addEventListener('click', () => {
-        dropdown.classList.toggle('hidden')
-        arrow.classList.toggle('fa-rotate-180')
-    })
+        menuItems.forEach((item, index) => {
+            if (item.style.animation) {
+                item.style.animation = '';
+                } else {
+                    item.style.animation = `menuItemFade 0.5s ease forwards ${index / 20 + .2}s`
+                }
+            });
 
-    close.addEventListener('click', () => {
-        sidebar.classList.remove('sidebar--active')
-        hamburger.classList.remove('nav__hamburger--hidden')
-    })
-}
+        hamburger.classList.toggle('toggle');
+
+        });
+
+    }
 
 navSlide();
 
@@ -123,7 +86,7 @@ function autoPlay() {
     updateCircleIndicator();
 }
 
-let timer = setInterval(autoPlay,7000);
+let timer = setInterval(autoPlay,4000);
 
 // numeralia slider
 
@@ -186,4 +149,3 @@ function getThesis(callback) {
     xhr.send(null);
 
 }
-

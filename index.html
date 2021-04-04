@@ -2,62 +2,47 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1.0, width=<device-width></device-width>">
         <title>Esmag</title>
             <script src="https://kit.fontawesome.com/6f27d00af3.js" crossorigin="anonymous"></script>
             <link rel="stylesheet" href="map_home_page/css/leaflet.css">
             <link rel="stylesheet" href="map_home_page/css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
             <link rel="stylesheet" href="styles.css">
-            <!-- <link rel="stylesheet" href="menu.css"> -->
     </head>
     <body>
-
-    <nav class='nav'>
-        <img class="logo" src="./graficos/ESMAG_fondo_blanco.svg" alt="">
+        <div class='logo-container'>
+            <img class="logo" src="./graficos/LOGO.png" alt="">
+        </div>
+        <nav class='nav'>
         <ul class='nav__menu'>
-            <li class='nav__menu-item'><i class="fas fa-chevron-down"></i><a href="#">Conoce el río</a>
+            <li class='nav__menu-item'><a href="/static/dist/index.html">Mapa</a></li>
+            <li class='nav__menu-item'><i class="fas fa-chevron-down"><a href="#"></i>Conoce el río</a>
                 <ul class='nav__dropdown'>
                     <li class='nav__dropdown-item'><a class='lightblue' href="#">Agua</a></li>
-                    <li class='nav__dropdown-item'><a class='green' href="#">Bosque</a></li>
+                    <li class='nav__dropdown-item'><a class='green' href="/website/templates/base_view.html">Bosque</a></li>
                     <li class='nav__dropdown-item'><a class='yellow' href="#">Usuarios</a></li>
                     <li class='nav__dropdown-item'><a class='darkblue' href="#">Gobernanza</a></li>
                 </ul>
+            </li class='nav__menu-item'>
+            <li class='nav__menu-item'><i class="fas fa-chevron-down"><a href="#"></i><a href="#">Visita el río</a>
+                <ul class='nav__dropdown'>
+                    <li class='nav__dropdown-item'><a class='lightblue' href="#">Sitios por conocer</a></li>
+                    <li class='nav__dropdown-item'><a class='green' href="#">Avisos</a></li>
+                    <li class='nav__dropdown-item'><a class='yellow' href="#">Materiales</a></li>
+                </ul>
             </li>
-            <li class='nav__menu-item'><a href="#"></i><a href="#">Visita el río</a></li>
-            <li class='nav__menu-item'><a href="#">Biblioteca</a></li>
-            <li class='nav__menu-item'><a href="#">SIG</a></li>
+            <li class='nav__menu-item'><a href="/biblioteca/">Biblioteca</a></li>
             <li class='nav__menu-item'><a href="#">Estrategia</a></li>
             <li class='nav__menu-item'><a href="#">Contacto</a></li>
         </ul>
+        <div class='nav__hamburger'>
+            <div class='nav__hamburger-line1'></div>
+            <div class='nav__hamburger-line2'></div>
+            <div class='nav__hamburger-line3'></div>
+        </div>
     </nav>
-
-    <div class=sidebar>
-        <i class="fas fa-times"></i>
-        <p class="sidebar__item sidebar__item-top sidebar__dropdown-parent"><span><img class="sidebar__icon" src="./graficos/contacto.svg" alt="">Conoce el río </span><i class="fas fa-sort-down"></i></p>
-            <div class="sidebar__dropdown hidden">
-                <p class="sidebar__dropdown-item lightblue">Agua</p>
-                <p class="sidebar__dropdown-item green">Bosque</p>
-                <p class="sidebar__dropdown-item yellow">Actores</p>
-                <p class="sidebar__dropdown-item darkblue">Gobernanza</p>
-            </div>
-        <p class="sidebar__item"><span><img class="sidebar__icon" src="./graficos/contacto.svg" alt=""></span>Visita el río</p>
-        <p class="sidebar__item"><span><img class="sidebar__icon" src="./graficos/biblioteca.svg" alt=""></span>Bilioteca</p>
-        <p class="sidebar__item"><span><img class="sidebar__icon" src="./graficos/contacto.svg" alt=""></span>SIG</p>
-        <p class="sidebar__item"><span><img class="sidebar__icon" src="./graficos/estrategia.svg" alt=""></span>Estrategia</p>
-        <p class="sidebar__item"><span><img class="sidebar__icon" src="./graficos/contacto.svg" alt=""></span>Contacto</p>
-    </div>
-
-    <img class="logo-right" src="./graficos/ESMAG_fondo_blanco.svg" alt="">
-    <div class='nav__hamburger'>
-        <i class="fas fa-bars"></i>
-        <!-- <div class='nav__hamburger-line1'></div>
-        <div class='nav__hamburger-line2'></div>
-        <div class='nav__hamburger-line3'></div> -->
-    </div>
-
     <section class="header">
         <div class="header__slider">
-            <div class="header__slide active" style="background-image: url('./fotos/cascada.jpg')">
+            <div class="header__slide active" style="background-image: url(./fotos/cascada.jpg)">
                 <div class="header__caption-container">
                     <div class="caption">
                         <P class="header__title">El Magdalena</P>
@@ -68,7 +53,7 @@
             </div>
         </div>
         <div class="header__slider">
-            <div class="header__slide" style="background-image: url('./fotos/bosque.jpg')">
+            <div class="header__slide" style="background-image: url(./fotos/bosque.jpg))">
                 <div class="header__caption-container">
                     <div class="caption">
                         <P class="header__title">El Magdalena</P>
@@ -79,7 +64,7 @@
             </div>
         </div>
         <div class="header__slider">
-            <div class="header__slide" style="background-image: url('./fotos/ciudad.JPG')">
+            <div class="header__slide" style="background-image: url(./fotos/ciudad.JPG)">
                 <div class="header__caption-container">
                     <div class="caption">
                         <P class="header__title">El Magdalena</P>
@@ -90,7 +75,7 @@
             </div>
         </div>
         <div class="header__slider">
-            <div class="header__slide" style="background-image: url('./fotos/santeria.jpg')">
+            <div class="header__slide" style="background-image: url(./fotos/santeria.jpg)">
                 <div class="header__caption-container">
                     <div class="caption">
                         <P class="header__title">El Magdalena</P>
@@ -101,7 +86,7 @@
             </div>
         </div>
         <div class="header__slider-indicator"></div>
-        <!-- <img src="./graficos/wave.png" alt=""> -->
+        <!-- <img src="./graficos/wave.svg" alt=""> -->
     </section>
     <section class="intro">
         <p class='title-left'>Un río vivo en la CDMX</p>
@@ -137,7 +122,7 @@
                 </div>
             </div>
         <div class="numeralia__controls">
-            <div class="prev"></div>
+            <div class="prev"><</div>
             <div class="next">></div>
         </div>
     </section>
