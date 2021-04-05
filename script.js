@@ -172,7 +172,7 @@ const botonMedia = document.querySelector('.btn-secondary');
 const botonBaja = document.querySelector('.btn-success');
 const mapButtons = document.querySelectorAll('.btn-block');
 const mapText = document.querySelector('.map-text');
-const title = document.querySelector('.map__description-title');
+const title = document.querySelector('.map__description-title--vertical');
 const icon = document.querySelector('.map__description-img')
 
 

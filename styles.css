@@ -760,6 +760,7 @@ html {
 
 .btn {
 	height: 3.7rem;
+    width:100%;
 	text-align: left;
 	color: white;
 	background-color: rgb(31, 42, 92);
@@ -772,6 +773,11 @@ html {
 	/* z-index: 3; */
 }
 
+.map__button-img {
+    width: 2rem;
+    margin-right: 2rem;
+}
+
 .btn.active {
 	background-color: rgb(29, 99, 162);
 	/* width: 102%; */
@@ -782,13 +788,15 @@ html {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: flex-start;
 	text-align: center;
 	/* padding: 0 4rem; */
 	width: 100%;
 }
 
 .map__description-icon {
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
 	width: 20rem;
 }
 
@@ -809,20 +817,8 @@ html {
 .map-text {
 	font-family: robotoSlab;
 	font-weight: 400;
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 	width: 80%;
-}
-
-.text-alta {
-	display: none;
-}
-
-.text-media {
-	display: none;
-}
-
-.text-baja {
-	display: none;
 }
 
 #map {
@@ -830,16 +826,72 @@ html {
 	z-index: 0;
 }
 
+.map__description-title--vertical {
+    display: none;
+}
+
 @media screen and (max-width: 500px) {
     .map__container {
-        position: relative;
         width: 85%;
-        /* left: 10%; */
         height: 85vh;
         display: flex;
         flex-direction: column;
     }
-}
+
+    .map__controls {
+        height: 20rem;
+        padding: 0;
+    }
+
+    .map_button-container {
+        display: flex;
+    }
+
+    .btn {
+        height:auto;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .map__button-img {
+        width: 2rem;
+        margin-right: 1rem;
+    }
+
+    .map__controls {
+        height: 40%;
+    }
+
+    .map__description-icon {
+        display: none;
+    }
+
+    .map__description-title--vertical {
+        display: block;
+        font-size: 3rem;
+        font-family: RobotoSlab;
+        font-weight: bold;
+        color: rgb(31, 42, 92);
+    }
+
+    .map__description {
+        align-items: flex-start;
+        padding: 3rem;
+    }
+
+    .map-text {
+        text-align: left;
+        font-size: 2rem;
+        line-height:3rem;
+        width: auto;
+    }
+
+    #map {
+        height:80%;
+    } 
+} 
+
 
 
 .vertical-menu {

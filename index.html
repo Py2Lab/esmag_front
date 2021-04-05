@@ -150,10 +150,13 @@
             cauce abierto, antes de volver a ser entubado junto con el río Churubusco.</p>
         <div class="map__container">
             <div class="map__controls">
-                <button type="button" class="btn btn-primary btn-block active" onclick="mostrarZonaAlta();">Cuenca alta</button>
-                <button type="button" class="btn btn-secondary btn-block" onclick="mostrarZonaMedia();">Cuenca media</button>
-                <button type="button" class="btn btn-success btn-block" onclick="mostrarZonaBaja();">Cuenca baja</button>
+                <div class="map_button-container">
+                    <button type="button" class="btn btn-primary btn-block active" onclick="mostrarZonaAlta();"><img class="map__button-img" src="./graficos/icono_alta_blanco.svg" alt="">Cuenca alta</button>
+                    <button type="button" class="btn btn-secondary btn-block" onclick="mostrarZonaMedia();"><img class="map__button-img" src="./graficos/icono_media_blanco.svg" alt="">Cuenca media</button>
+                    <button type="button" class="btn btn-success btn-block" onclick="mostrarZonaBaja();"><img class="map__button-img" src="./graficos/icono_baja_blanco.svg" alt="">Cuenca baja</button>
+                </div>
                 <div class="map__description">
+                    <h1 class="map__description-title--vertical">Cuenca alta</h1>
                     <div class="map__description-icon">   
                         <img class="map__description-img" src="./graficos/icono_alta_azul.svg" alt="">
                         <p class="map__description-title">Cuenca alta</p>
