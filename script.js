@@ -1,6 +1,6 @@
 // MENU
 
-const nav = document.querySelector('.nav');
+const nav = document.querySelector('.mainnav');
 const bottomOfNav = nav.offsetTop;
 const logoImg = document.querySelector('.logo');
 let lastScrollTop = 45;
@@ -37,16 +37,16 @@ window.addEventListener('scroll', hideNav);
 // SIDE NAV
 
 const navSlide = () => {
-    const hamburger = document.querySelector(".nav__hamburger");
-    const sidebar = document.querySelector(".sidebar");
-    const dropdownParent = document.querySelector('.sidebar__dropdown-parent');
-    const dropdown = document.querySelector('.sidebar__dropdown');
+    const hamburger = document.querySelector(".mainnav__hamburger");
+    const sidebar = document.querySelector(".mainsidebar");
+    const dropdownParent = document.querySelector('.mainsidebar__dropdown-parent');
+    const dropdown = document.querySelector('.mainsidebar__dropdown');
     const arrow = document.querySelector('.fa-sort-down');
     const close = document.querySelector('.fa-times')
 
     hamburger.addEventListener('click', () => {
-        sidebar.classList.add('sidebar--active');
-        hamburger.classList.add('nav__hamburger--hidden')
+        sidebar.classList.add('mainsidebar--active');
+        hamburger.classList.add('mainnav__hamburger--hidden')
     })
 
     dropdownParent.addEventListener('click', () => {
@@ -55,8 +55,8 @@ const navSlide = () => {
     })
 
     close.addEventListener('click', () => {
-        sidebar.classList.remove('sidebar--active')
-        hamburger.classList.remove('nav__hamburger--hidden')
+        sidebar.classList.remove('mainsidebar--active')
+        hamburger.classList.remove('mainnav__hamburger--hidden')
     })
 }
 
