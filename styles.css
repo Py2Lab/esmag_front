@@ -825,3 +825,27 @@ middle-bar-right{
     font-family: oswald;
     font-size: 4rem;
 }
+
+.search-button{
+    color:white;
+    background-color: rgb(31, 42, 92);
+    border-color: rgb(31, 42, 92);
+    font-family: oswald;
+    font-size: 1.75rem;
+    border-radius: 7.5px;
+    float: right;
+    width:20%;
+    margin:1px;
+}
+
+.search-button-con{
+    color:white;
+    background-color: rgb(31, 42, 92);
+    border-color: rgb(31, 42, 92);
+    font-family: oswald;
+    font-size: 1.75rem;
+    float: right;
+    width:100%;
+    margin:1px;
+}
+
