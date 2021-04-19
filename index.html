@@ -12,43 +12,43 @@
     </head>
     <body>
 
-    <nav class='nav'>
+    <nav class='mainnav'>
         <img class="logo" src="./graficos/ESMAG_fondo_blanco.svg" alt="">
-        <ul class='nav__menu'>
-            <li class='nav__menu-item'><i class="fas fa-chevron-down"></i><a href="#">Conoce el río</a>
-                <ul class='nav__dropdown'>
-                    <li class='nav__dropdown-item'><a class='lightblue' href="#">Agua</a></li>
-                    <li class='nav__dropdown-item'><a class='green' href="#">Bosque</a></li>
-                    <li class='nav__dropdown-item'><a class='yellow' href="#">Usuarios</a></li>
-                    <li class='nav__dropdown-item'><a class='darkblue' href="#">Gobernanza</a></li>
+        <ul class='mainnav__menu'>
+            <li class='mainnav__menu-item'><i class="fas fa-chevron-down"></i><a href="#">Conoce el río</a>
+                <ul class='mainnav__dropdown'>
+                    <li class='mainnav__dropdown-item'><a class='lightblue' href="#">Agua</a></li>
+                    <li class='mainnav__dropdown-item'><a class='green' href="#">Bosque</a></li>
+                    <li class='mainnav__dropdown-item'><a class='yellow' href="#">Usuarios</a></li>
+                    <li class='mainnav__dropdown-item'><a class='darkblue' href="#">Gobernanza</a></li>
                 </ul>
             </li>
-            <li class='nav__menu-item'><a href="#"></i><a href="#">Visita el río</a></li>
-            <li class='nav__menu-item'><a href="#">Biblioteca</a></li>
-            <li class='nav__menu-item'><a href="#">SIG</a></li>
-            <li class='nav__menu-item'><a href="#">Estrategia</a></li>
-            <li class='nav__menu-item'><a href="#">Contacto</a></li>
+            <li class='mainnav__menu-item'><a href="#"></i><a href="#">Visita el río</a></li>
+            <li class='mainnav__menu-item'><a href="#">Biblioteca</a></li>
+            <li class='mainnav__menu-item'><a href="#">SIG</a></li>
+            <li class='mainnav__menu-item'><a href="#">Estrategia</a></li>
+            <li class='mainnav__menu-item'><a href="#">Contacto</a></li>
         </ul>
     </nav>
 
-    <div class=sidebar>
+    <div class=mainsidebar>
         <i class="fas fa-times"></i>
-        <p class="sidebar__item sidebar__item-top sidebar__dropdown-parent"><span><img class="sidebar__icon" src="./graficos/contacto.svg" alt="">Conoce el río </span><i class="fas fa-sort-down"></i></p>
-            <div class="sidebar__dropdown hidden">
-                <p class="sidebar__dropdown-item lightblue">Agua</p>
-                <p class="sidebar__dropdown-item green">Bosque</p>
-                <p class="sidebar__dropdown-item yellow">Actores</p>
-                <p class="sidebar__dropdown-item darkblue">Gobernanza</p>
+        <p class="mainsidebar__item mainsidebar__item-top mainsidebar__dropdown-parent"><span><img class="mainsidebar__icon" src="./graficos/contacto.svg" alt="">Conoce el río </span><i class="fas fa-sort-down"></i></p>
+            <div class="mainsidebar__dropdown hidden">
+                <p class="mainsidebar__dropdown-item lightblue">Agua</p>
+                <p class="mainsidebar__dropdown-item green">Bosque</p>
+                <p class="mainsidebar__dropdown-item yellow">Actores</p>
+                <p class="mainsidebar__dropdown-item darkblue">Gobernanza</p>
             </div>
-        <p class="sidebar__item"><span><img class="sidebar__icon" src="./graficos/contacto.svg" alt=""></span>Visita el río</p>
-        <p class="sidebar__item"><span><img class="sidebar__icon" src="./graficos/biblioteca.svg" alt=""></span>Bilioteca</p>
-        <p class="sidebar__item"><span><img class="sidebar__icon" src="./graficos/contacto.svg" alt=""></span>SIG</p>
-        <p class="sidebar__item"><span><img class="sidebar__icon" src="./graficos/estrategia.svg" alt=""></span>Estrategia</p>
-        <p class="sidebar__item"><span><img class="sidebar__icon" src="./graficos/contacto.svg" alt=""></span>Contacto</p>
+        <p class="mainsidebar__item"><span><img class="mainsidebar__icon" src="./graficos/contacto.svg" alt=""></span>Visita el río</p>
+        <p class="mainsidebar__item"><span><img class="mainsidebar__icon" src="./graficos/biblioteca.svg" alt=""></span>Bilioteca</p>
+        <p class="mainsidebar__item"><span><img class="mainsidebar__icon" src="./graficos/contacto.svg" alt=""></span>SIG</p>
+        <p class="mainsidebar__item"><span><img class="mainsidebar__icon" src="./graficos/estrategia.svg" alt=""></span>Estrategia</p>
+        <p class="mainsidebar__item"><span><img class="mainsidebar__icon" src="./graficos/contacto.svg" alt=""></span>Contacto</p>
     </div>
 
     <img class="logo-right" src="./graficos/ESMAG_fondo_blanco.svg" alt="">
-    <div class='nav__hamburger'>
+    <div class='mainnav__hamburger'>
         <i class="fas fa-bars"></i>
         <!-- <div class='nav__hamburger-line1'></div>
         <div class='nav__hamburger-line2'></div>
@@ -148,17 +148,27 @@
             Anzaldo, donde inicia el tramo entubado que va por la avenida Río Magdalena hasta llegar a Chimalistac.
             En Avenida Universidad lo puedes ver desde el puente del templo de Panzacola y en los Viveros de Coyoacán recupera su
             cauce abierto, antes de volver a ser entubado junto con el río Churubusco.</p>
-        <div class="ubicacion__map-container">
-            <div class="ubicacion__map-controls">
-                <button type="button" class="btn btn-primary btn-block" onclick="mostrarZonaAlta();">Cuenca Alta</button>
-                <button type="button" class="btn btn-secondary btn-block" onclick="mostrarZonaMedia();">Cuenca Media</button>
-                <button type="button" class="btn btn-success btn-block" onclick="mostrarZonaBaja();">Cuenca Baja</button>
+        <div class="map__container">
+            <div class="map__controls">
+                <div class="map_button-container">
+                    <button type="button" class="btn btn-primary btn-block active" onclick="mostrarZonaAlta();"><img class="map__button-img" src="./graficos/icono_alta_blanco.svg" alt="">Cuenca alta</button>
+                    <button type="button" class="btn btn-secondary btn-block" onclick="mostrarZonaMedia();"><img class="map__button-img" src="./graficos/icono_media_blanco.svg" alt="">Cuenca media</button>
+                    <button type="button" class="btn btn-success btn-block" onclick="mostrarZonaBaja();"><img class="map__button-img" src="./graficos/icono_baja_blanco.svg" alt="">Cuenca baja</button>
+                </div>
+                <div class="map__description">
+                    <h1 class="map__description-title--vertical">Cuenca alta</h1>
+                    <div class="map__description-icon">   
+                        <img class="map__description-img" src="./graficos/icono_alta_azul.svg" alt="">
+                        <p class="map__description-title">Cuenca alta</p>
+                    </div>
+                    <p class="map-text">Aquí surge el río de escurrimientos superficiales: ojos de agua, charcos y lloraderos. El aire es puro y hay explanadas de pastizales con pinos de la especie <i>P. hartwegii</i>. La huella humana es escasa y el agua, cristalina.</p>
+                </div>
             </div>
             <div id="map"></div>
         </div>
         <p class='regular-text'>De acuerdo con sus características biofísicas y de uso, la cuenca se divide en tres zonas para su estudio: la cuenca alta es
-            la de conservación, va desde Cieneguillas hasta el Cuarto Dinamo; la cuenca media es para la recreación, desde el Cuarto
-            Dinamo hasta La Cañada; y la cuenca baja es la zona urbana, desde el pueblo de La Magdalena hasta la presa Anzaldo.</p>
+            la de <span class='blue-highlight'>conservación</span>, va desde Cieneguillas hasta el Cuarto Dinamo; la cuenca media es para la <span class='blue-highlight'>recreación</span>, desde el Cuarto
+            Dinamo hasta La Cañada; y la cuenca baja es la <span class='blue-highlight'>zona urbana</span>, desde el pueblo de La Magdalena hasta la presa Anzaldo.</p>
     </section>
 
     </body>

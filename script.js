@@ -1,6 +1,6 @@
 // MENU
 
-const nav = document.querySelector('.nav');
+const nav = document.querySelector('.mainnav');
 const bottomOfNav = nav.offsetTop;
 const logoImg = document.querySelector('.logo');
 let lastScrollTop = 45;
@@ -37,16 +37,16 @@ window.addEventListener('scroll', hideNav);
 // SIDE NAV
 
 const navSlide = () => {
-    const hamburger = document.querySelector(".nav__hamburger");
-    const sidebar = document.querySelector(".sidebar");
-    const dropdownParent = document.querySelector('.sidebar__dropdown-parent');
-    const dropdown = document.querySelector('.sidebar__dropdown');
+    const hamburger = document.querySelector(".mainnav__hamburger");
+    const sidebar = document.querySelector(".mainsidebar");
+    const dropdownParent = document.querySelector('.mainsidebar__dropdown-parent');
+    const dropdown = document.querySelector('.mainsidebar__dropdown');
     const arrow = document.querySelector('.fa-sort-down');
     const close = document.querySelector('.fa-times')
 
     hamburger.addEventListener('click', () => {
-        sidebar.classList.add('sidebar--active');
-        hamburger.classList.add('nav__hamburger--hidden')
+        sidebar.classList.add('mainsidebar--active');
+        hamburger.classList.add('mainnav__hamburger--hidden')
     })
 
     dropdownParent.addEventListener('click', () => {
@@ -55,8 +55,8 @@ const navSlide = () => {
     })
 
     close.addEventListener('click', () => {
-        sidebar.classList.remove('sidebar--active')
-        hamburger.classList.remove('nav__hamburger--hidden')
+        sidebar.classList.remove('mainsidebar--active')
+        hamburger.classList.remove('mainnav__hamburger--hidden')
     })
 }
 
@@ -166,6 +166,47 @@ function changeNumeraliaSlide() {
     numeraliaSlides[numeraliaIndex].classList.add('active');
 }
 
+// mapa
+const botonAlta = document.querySelector('.btn-primary');
+const botonMedia = document.querySelector('.btn-secondary');
+const botonBaja = document.querySelector('.btn-success');
+const mapButtons = document.querySelectorAll('.btn-block');
+const mapText = document.querySelector('.map-text');
+const title = document.querySelector('.map__description-title--vertical');
+const icon = document.querySelector('.map__description-img')
+
+
+botonAlta.addEventListener('click', function() {
+    for (let i = 0; i < mapButtons.length; i++) {
+        mapButtons[i].classList.remove('active');
+    }
+    botonAlta.classList.add('active');
+    title.innerHTML = 'Cuenca alta';
+    icon.src = "./graficos/icono_alta_azul.svg";
+    mapText.innerHTML = 'Aquí surge el río de escurrimientos superficiales: ojos de agua, charcos y lloraderos. El aire es puro y hay explanadas de pastizales con pinos de la especie <i>P. hartwegii</i>. La huella humana es escasa y el agua, cristalina.'
+});
+
+botonMedia.addEventListener('click', function() {
+    for (let i = 0; i < mapButtons.length; i++) {
+        mapButtons[i].classList.remove('active');
+    }
+    botonMedia.classList.add('active');
+    title.innerHTML = 'Cuenca media';
+    icon.src = "./graficos/icono_media_azul.svg";
+    mapText.innerHTML = 'El bosque se vuelve más denso: los oyameles crecen por doquier, junto con encinos y hongos. La actividad humana se intensifica y con ella el deterioro de la vegetación y la calidad del agua.';
+});
+
+botonBaja.addEventListener('click', function() {
+    for (let i = 0; i < mapButtons.length; i++) {
+        mapButtons[i].classList.remove('active');
+    }
+    botonBaja.classList.add('active');
+    title.innerHTML = 'Cuenca baja';
+    icon.src = "./graficos/icono_baja_azul.svg";
+    mapText.innerHTML = 'En la zona urbana, el río se transforma. Al principio todavía corre a cielo abierto; en su descenso se mezcla con agua de desagües y de otros ríos contaminados. Conserva algo de vegetación en sus orillas, pero ya no podemos hablar de bosque. Finalmente es entubado y desaparece bajo de la ciudad.';
+});
+
+
 function getThesis(callback) {
     
 
@@ -186,4 +227,5 @@ function getThesis(callback) {
     xhr.send(null);
 
 }
+
 
